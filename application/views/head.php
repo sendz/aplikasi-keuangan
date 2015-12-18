@@ -1,3 +1,8 @@
+<?php
+  if(!$_SESSION['username']) {
+    header('location:'.base_url().index_page().'/login');
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>

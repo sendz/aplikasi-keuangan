@@ -11,6 +11,7 @@
         ?>
       </select>
     </div>
+    <!--
     <div class="input-field col s5">
       <input type="text" name="pemasukan-nama-siswa" id="pemasukan-nama-siswa">
       <label for="pemasukan-nama-siswa">Nama Siswa</label>
@@ -18,7 +19,9 @@
     <div class="input-field col s2">
       <button type="button" name="pemasukan-cari" id="pemasukan-cari" class="btn waves-effect waves-light">Cari</button>
     </div>
+    -->
   </div>
+
   <div class="col s12">
     <table class="stripped highlight">
       <thead>
@@ -146,11 +149,13 @@
       </tbody>
     </table>
   </div>
+  <?php if ($_SESSION['role'] == 1) : ?>
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red modal-trigger" href="#pemasukan-tambah">
       <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
     </a>
   </div>
+<?php endif; ?>
   <div id="pemasukan-tambah" class="modal">
     <form class="" action="<?php echo base_url() . index_page(); ?>/pemasukan/tambah" method="post">
       <div class="modal-content">

@@ -54,12 +54,13 @@
     </table>
   </div>
 
+  <?php if ($_SESSION['role'] == 1) : ?>
   <div class="fixed-action-btn" style="bottom:45px; right:24px;">
     <a href="#pengeluaran-tambah" class="btn-floating btn-large red modal-trigger">
       <i class="large material-icons">add</i>
     </a>
   </div>
-
+<?php endif; ?>
   <div class="modal" id="pengeluaran-tambah">
     <form class="" action="<?php echo base_url() . index_page(); ?>/pengeluaran/tambah" method="post">
       <div class="modal-content">

@@ -17,12 +17,13 @@
     </ul>
     <ul class="side-nav" id="side-nav">
       <?php /*<li><a href="<?php echo base_url() . index_page(); ?>">Dashboard</a></li> */?>
+      <li><a href="<?php echo base_url() . index_page(); ?>/login/logout">Logout <?php echo $_SESSION['nama']; ?></a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/siswa">Data Siswa</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/kelas">Kelas</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/pemasukan">Pemasukan</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/pengeluaran">Pengeluaran</a></li>
       <li><a href="#" id="dropdown-kas" class="dropdown-button" data-activates="dropdown-kas-list">Transaksi</a></li>
-      <li><a href="<?php echo base_url() . index_page(); ?>/pengaturan">Pengaturan</a></li>
+      <?php if($_SESSION['role'] == 1) : ?><li><a href="<?php echo base_url() . index_page(); ?>/pengaturan">Pengaturan</a></li><?php endif; ?>
     </ul>
     <ul id="dropdown-kas-list" class="dropdown-content">
       <li><a href="<?php echo base_url() . index_page(); ?>/kas/saldo">Saldo</a></li>

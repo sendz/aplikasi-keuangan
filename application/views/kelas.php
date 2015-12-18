@@ -12,9 +12,11 @@
           <th>
             Jumlah Siswa
           </th>
+          <?php if ($_SESSION['role'] == 1) : ?>
           <th style="width:150px;">
             Aksi
           </th>
+          <?php endif;?>
         </tr>
       </thead>
       <tbody>
@@ -30,20 +32,26 @@
             echo $data->nama;
             echo "</td><td>";
             echo $data->jumlah_siswa;
-            echo "</td><td>";
+            echo "</td>";
+
+            if ($_SESSION['role'] == 1) :
+            echo "<td>";
             echo "<a class='btn waves-effect waves-light' onClick='modalEditKelas(".$data->id.",\"".$data->tingkat." ".$data->nama."\")'>Edit</a>";
             echo "</td>";
+            endif;
             echo "</tr>";
           }
          ?>
       </tbody>
     </table>
   </div>
+  <?php if ($_SESSION['role'] == 1) : ?>
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red modal-trigger" href="#siswa-tambah-kelas">
       <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
     </a>
   </div>
+  <?php endif; ?>
   <!-- Modal Tambah -->
   <div id="siswa-tambah-kelas" class="modal">
     <form class="form" action="<?php echo base_url() . index_page(); ?>/kelas/tambah" method="post">

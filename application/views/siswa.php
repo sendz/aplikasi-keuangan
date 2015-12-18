@@ -11,6 +11,8 @@
       </select>
     </div>
   </div>
+
+  <?php if ($_SESSION['role'] == 1) : ?>
   <div class="col s5 offset-s1">
     <form class="" action="<?php echo base_url() . index_page(); ?>/siswa/upload" method="post" enctype="multipart/form-data">
       <div class="file-field input-field col s10">
@@ -27,6 +29,7 @@
       </div>
     </form>
   </div>
+  <?php endif; ?>
   <div class="col s12" id="table-siswa">
     <table class="stripped highlight responsive-table">
       <thead>
@@ -49,9 +52,12 @@
           <th>
             Tahun Masuk
           </th>
+
+          <?php if ($_SESSION['role'] == 1) : ?>
           <th style="width:150px;">
             Aksi
           </th>
+        <?php endif; ?>
         </tr>
       </thead>
       <tbody>
@@ -70,19 +76,27 @@
             echo $siswa->orangtua;
             echo "</td><td>";
             echo $siswa->tahunmasuk;
-            echo "</td><td>";
+            echo "</td>";
+
+            if ($_SESSION['role'] == 1) :
+            echo "<td>";
             echo "<a onClick='modalEditSiswa(".$siswa->id.",".$siswa->nis.",\"".$siswa->nama."\",".$siswa->idkelas.",\"".$siswa->alamat."\",\"".$siswa->orangtua."\",".$siswa->tahunmasuk.")' class='btn waves-effect waves-light'>Edit</a>";
-            echo "</td></tr>";
+            echo "</td>";
+            endif;
+            echo "</tr>";
           }
         ?>
       </tbody>
     </table>
   </div>
+
+  <?php if ($_SESSION['role'] == 1) : ?>
   <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red modal-trigger" href="#siswa-tambah-siswa">
       <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
     </a>
   </div>
+  <?php endif; ?>
 
   <!-- Modal Tambah Siswa -->
   <div id="siswa-tambah-siswa" class="modal">
