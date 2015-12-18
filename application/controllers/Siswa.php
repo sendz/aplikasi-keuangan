@@ -44,4 +44,13 @@ class Siswa extends CI_Controller
     $data['siswa']  = $this->model_siswa->find($by,$id);
     $this->load->view('optionsiswa',$data);
   }
+
+  public function siswakelas($by, $id) {
+    $data['siswa'] = $this->model_siswa->listById($by, $id);
+    $this->load->view('tablesiswa',$data);
+  }
+
+  public function upload() {
+    $this->model_siswa->uploadSiswa();
+  }
 }

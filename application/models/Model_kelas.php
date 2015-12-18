@@ -28,7 +28,11 @@ class Model_kelas extends CI_Model
   public function addKelas() {
     $splitKelas = preg_split("/ /",$_POST['kelas-tambah-nama']);
     $this->tingkat = $splitKelas[0];
-    $this->nama = $splitKelas[1] . " " . $splitKelas[2];
+    if (isset($splitKelas[2])) {
+      $this->nama = $splitKelas[1] . " " . $splitKelas[2];
+    } else {
+      $this->nama = $splitKelas[1];
+    }
     $this->slug = underscore($_POST['kelas-tambah-nama']);
 
     // Database Query - Insert

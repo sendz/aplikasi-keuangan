@@ -50,7 +50,7 @@
       <div class="modal-content">
         <h4>Tambah Kelas</h4>
         <div class="input-field col s12">
-          <input type="text" name="kelas-tambah-nama" id="kelas-tambah-nama">
+          <input type="text" name="kelas-tambah-nama" id="kelas-tambah-nama" autofocus="true">
           <label for="kelas-tambah-nama">Nama Kelas</label>
         </div>
       </div>
@@ -67,7 +67,7 @@
         <div class="col s12">
           <input type="hidden" name="kelas-edit-id" id="kelas-edit-id">
           <label for="kelas-tambah-nama">Nama Kelas</label>
-          <input type="text" name="kelas-edit-nama" id="kelas-edit-nama">
+          <input type="text" name="kelas-edit-nama" id="kelas-edit-nama" autofocus="true">
         </div>
       </div>
       <div class="modal-footer">

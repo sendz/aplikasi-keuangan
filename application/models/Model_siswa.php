@@ -15,6 +15,11 @@ class Model_siswa extends CI_Model {
     return $query->result();
   }
 
+  public function listById($by, $id) {
+    $query = $this->db->query("SELECT siswa.id, siswa.nis, siswa.idkelas, siswa.nama, siswa.alamat, siswa.orangtua, siswa.tahunmasuk, kelas.tingkat, kelas.nama as namakelas FROM siswa INNER JOIN kelas ON siswa.idkelas = kelas.id WHERE siswa.$by = $id ORDER BY siswa.nis");
+    return $query->result();
+  }
+
   public function find($by, $id){
     $query = $this->db->get_where('siswa',array($by => $id));
     return $query->result();
@@ -49,6 +54,23 @@ class Model_siswa extends CI_Model {
     $this->db->update('siswa',$this);
 
     // Back to Kelas after completed
+    header('location:'.base_url().index_page().'/siswa');
+  }
+
+  public function uploadSiswa() {
+    if (isset($_POST['submit'])) {
+      $file     = $_FILES['excel-file']['tmp_name'];
+      $handle   = fopen($file,"r");
+      $c        = 0;
+      echo $file;
+      while (($filesop = fgetcsv($handle, 1000, ";")) != false) {
+        $this->idkelas  = $filesop[0];
+        $this->nama     = $filesop[1];
+        // echo $this->idkelas;
+        // echo $this->nama;
+        $this->db->insert('siswa', $this);
+      }
+    }
     header('location:'.base_url().index_page().'/siswa');
   }
 }

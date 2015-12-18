@@ -16,7 +16,7 @@
       </li>
     </ul>
     <ul class="side-nav" id="side-nav">
-      <li><a href="<?php echo base_url() . index_page(); ?>">Dashboard</a></li>
+      <?php /*<li><a href="<?php echo base_url() . index_page(); ?>">Dashboard</a></li> */?>
       <li><a href="<?php echo base_url() . index_page(); ?>/siswa">Data Siswa</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/kelas">Kelas</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/pemasukan">Pemasukan</a></li>

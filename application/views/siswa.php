@@ -11,18 +11,23 @@
       </select>
     </div>
   </div>
-  <div class="col s3 offset-s3">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>File</span>
-        <input type="file">
+  <div class="col s5 offset-s1">
+    <form class="" action="<?php echo base_url() . index_page(); ?>/siswa/upload" method="post" enctype="multipart/form-data">
+      <div class="file-field input-field col s10">
+        <div class="btn">
+          <span>File</span>
+          <input type="file" name="excel-file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload Data Siswa CSV">
+        </div>
       </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload Data Siswa xls">
+      <div class="input-field col s2">
+        <input type="submit" class="btn waves-effect waves-light" value="Simpan" name="submit">
       </div>
-    </div>
+    </form>
   </div>
-  <div class="col s12">
+  <div class="col s12" id="table-siswa">
     <table class="stripped highlight responsive-table">
       <thead>
         <tr>

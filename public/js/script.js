@@ -80,7 +80,14 @@ $('#pemasukan-tambah-kelas').on("change", function(event){
   var data = this.value;
   console.log(data);
   $.get('./siswa/kelas/idkelas/'+data, function(resp){
-    console.log(resp);
     $('#pemasukan-tambah-nama').html(resp);
   });
 });
+
+$('#siswa-pilih-kelas').on("change", function(event){
+  var data = this.value;
+  console.log(data);
+  $.get('./siswa/siswakelas/idkelas/'+data, function(resp){
+    $('#table-siswa').html(resp);
+  })
+})
