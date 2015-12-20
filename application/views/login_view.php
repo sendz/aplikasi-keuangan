@@ -19,11 +19,11 @@
       </div>
       <div class="col s12">
         <?php echo form_open('verifylogin'); ?>
-        <div class="input-field col s4 offset-s4">
+        <div class="col s4 offset-s4">
             <label for="username">Username:</label>
             <input type="text" size="20" id="username" name="username"/>
         </div>
-        <div class="input-field col s4 offset-s4">
+        <div class="col s4 offset-s4">
           <label for="password">Password:</label>
           <input type="password" size="20" id="passowrd" name="password"/>
         </div>

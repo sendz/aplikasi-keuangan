@@ -87,7 +87,8 @@ $('#pemasukan-tambah-kelas').on("change", function(event){
 $('#siswa-pilih-kelas').on("change", function(event){
   var data = this.value;
   console.log(data);
-  $.get('./siswa/siswakelas/idkelas/'+data, function(resp){
+  $.get('../siswakelas/idkelas/'+data, function(resp){
     $('#table-siswa').html(resp);
+    $('.pagination').hide();
   })
 })

@@ -80,7 +80,12 @@
 
             if ($_SESSION['role'] == 1) :
             echo "<td>";
-            echo "<a onClick='modalEditSiswa(".$siswa->id.",".$siswa->nis.",\"".$siswa->nama."\",".$siswa->idkelas.",\"".$siswa->alamat."\",\"".$siswa->orangtua."\",".$siswa->tahunmasuk.")' class='btn waves-effect waves-light'>Edit</a>";
+            if ($siswa->nis != null) {
+              $nis = $siswa->nis;
+            } else {
+              $nis = 0;
+            }
+            echo "<a onClick='modalEditSiswa(".$siswa->id.",".$nis.",\"".$siswa->nama."\",".$siswa->idkelas.",\"".$siswa->alamat."\",\"".$siswa->orangtua."\",".$siswa->tahunmasuk.")' class='btn waves-effect waves-light'>Edit</a>";
             echo "</td>";
             endif;
             echo "</tr>";
@@ -88,6 +93,9 @@
         ?>
       </tbody>
     </table>
+  </div>
+  <div class="col s12 center" style="margin: 20px 0px;">
+    <?php echo $links; ?>
   </div>
 
   <?php if ($_SESSION['role'] == 1) : ?>

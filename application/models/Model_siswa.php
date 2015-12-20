@@ -9,6 +9,15 @@ class Model_siswa extends CI_Model {
     parent::__construct();
   }
 
+  public function countSiswa() {
+    return $this->db->count_all('siswa');
+  }
+
+  public function pageSiswa($limit, $start) {
+    $query = $this->db->query("SELECT siswa.id, siswa.nis, siswa.idkelas, siswa.nama, siswa.alamat, siswa.orangtua, siswa.tahunmasuk, kelas.tingkat, kelas.nama as namakelas FROM siswa INNER JOIN kelas ON siswa.idkelas = kelas.id LIMIT $limit OFFSET $start");
+    return $query->result();
+  }
+
   public function listSiswa() {
     // 'SELECT kelas.id, kelas.slug, kelas.nama, kelas.tingkat, (SELECT COUNT(*) FROM siswa WHERE siswa.idkelas = kelas.id) AS jumlah_siswa FROM kelas'
     $query = $this->db->query('SELECT siswa.id, siswa.nis, siswa.idkelas, siswa.nama, siswa.alamat, siswa.orangtua, siswa.tahunmasuk, kelas.tingkat, kelas.nama as namakelas FROM siswa INNER JOIN kelas ON siswa.idkelas = kelas.id');
@@ -62,7 +71,6 @@ class Model_siswa extends CI_Model {
       $file     = $_FILES['excel-file']['tmp_name'];
       $handle   = fopen($file,"r");
       $c        = 0;
-      echo $file;
       while (($filesop = fgetcsv($handle, 1000, ";")) != false) {
         $this->idkelas  = $filesop[0];
         $this->nama     = $filesop[1];

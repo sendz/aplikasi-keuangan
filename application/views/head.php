@@ -16,5 +16,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/materialize.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css" media="screen" title="no title" charset="utf-8">
+    <style>
+      @media print {
+        nav, .fixed-action-btn, #tambah-pengeluaran, #pengeluaran-tambah {
+          display: none;
+        }
+        .print {
+          display: block !important;
+        }
+        table th, table td {
+          border: 1px solid black;
+        }
+      }
+    </style>
   </head>
   <body>

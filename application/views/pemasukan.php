@@ -131,9 +131,9 @@
             }
             $row .= "<td>";
             if ($totalBiayaPendidikan - $total == 0) {
-              $keterangan = "<a href='" . base_url() . index_page() . "/pemasukan/siswa/nis/".$pemasukan->nis."' class='btn'>Lunas</span>";
+              $keterangan = "<a href='" . base_url() . index_page() . "/pemasukan/siswa/id/".$pemasukan->idsiswa."' class='btn'>Lunas</span>";
             } else {
-              $keterangan = "<a href='" . base_url() . index_page() . "/pemasukan/siswa/nis/".$pemasukan->nis."' class='btn red'>-";
+              $keterangan = "<a href='" . base_url() . index_page() . "/pemasukan/siswa/id/".$pemasukan->idsiswa."' class='btn red'>-";
               $keterangan .= "<span class='currency'>";
               $keterangan .= $totalBiayaPendidikan - $total;
               $keterangan .= "</span>";
@@ -164,7 +164,7 @@
           <select class="" name="pemasukan-tambah-kelas" id="pemasukan-tambah-kelas">
             <option value="option" disabled selected>Kelas</option>
             <?php
-            foreach ($kelas as $kelas) :
+            foreach ($tambahkelas as $kelas) :
               echo "<option value='".$kelas->id."'>".$kelas->tingkat." ".$kelas->nama."</option>";
             endforeach;
             ?>

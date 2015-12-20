@@ -15,9 +15,11 @@
         <a href="#" data-activates="side-nav" class="button-collapse show-on-large"><i class="material-icons"><img src="<?php echo base_url(); ?>public/img/ic_menu_white_36px.svg" alt="menu" /></i></a>
       </li>
     </ul>
+    <ul class="right">
+      <li><a href="<?php echo base_url() . index_page(); ?>/login/logout">Logout <?php echo $_SESSION['nama']; ?></a></li>
+    </ul>
     <ul class="side-nav" id="side-nav">
       <?php /*<li><a href="<?php echo base_url() . index_page(); ?>">Dashboard</a></li> */?>
-      <li><a href="<?php echo base_url() . index_page(); ?>/login/logout">Logout <?php echo $_SESSION['nama']; ?></a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/siswa">Data Siswa</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/kelas">Kelas</a></li>
       <li><a href="<?php echo base_url() . index_page(); ?>/pemasukan">Pemasukan</a></li>

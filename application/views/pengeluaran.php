@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s12">
-    <table class="stripped highlight">
+    <table class="stripped highlight print">
       <thead>
         <tr>
           <th>

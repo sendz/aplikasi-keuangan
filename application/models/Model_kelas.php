@@ -45,7 +45,11 @@ class Model_kelas extends CI_Model
   public function updateKelas() {
     $splitKelas = preg_split("/ /",$_POST['kelas-edit-nama']);
     $this->tingkat = $splitKelas[0];
-    $this->nama = $splitKelas[1] . " " . $splitKelas[2];
+    if (isset($splitKelas[2])) {
+      $this->nama = $splitKelas[1] . " " . $splitKelas[2];
+    } else {
+      $this->nama = $splitKelas[1];
+    }
     $this->slug = underscore($_POST['kelas-edit-nama']);
     $id = $_POST['kelas-edit-id'];
 

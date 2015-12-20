@@ -20,6 +20,7 @@ class Pemasukan extends CI_Controller
   {
     # code...
     $data['kelas']  = $this->model_kelas->namaKelas();
+    $data['tambahkelas'] = $this->model_kelas->namaKelas();
     $data['siswa']  = $this->model_siswa->listSiswa();
     $data['pembayaran'] = $this->model_pemasukan->listPemasukan();
     $data['pengaturan'] = $this->model_pengaturan->listPengaturan();
