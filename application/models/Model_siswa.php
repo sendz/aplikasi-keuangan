@@ -46,7 +46,7 @@ class Model_siswa extends CI_Model {
     $this->db->insert('siswa',$this);
 
     // Back to Kelas after completed
-    header('location:'.base_url().index_page().'/siswa');
+    header('location:'.base_url().index_page());
   }
 
   public function updateSiswa() {
@@ -63,7 +63,7 @@ class Model_siswa extends CI_Model {
     $this->db->update('siswa',$this);
 
     // Back to Kelas after completed
-    header('location:'.base_url().index_page().'/siswa');
+    header('location:'.base_url().index_page());
   }
 
   public function uploadSiswa() {
@@ -79,6 +79,6 @@ class Model_siswa extends CI_Model {
         $this->db->insert('siswa', $this);
       }
     }
-    header('location:'.base_url().index_page().'/siswa');
+    header('location:'.base_url().index_page());
   }
 }

@@ -90,7 +90,7 @@
       <tfoot>
         <?php
           echo "<tr><th colspan='4'></th><th><span class='left'>Total</span></th><th><span class='right currency'>" . $totalKasMasuk . "</span></th><th><span class='right currency'>" . $totalKasKeluar . "</span></th></tr>";
-          echo "<tr><th colspan='4'></th><th><span class='left'>Kas</span></th><th colspan='2' class='center'><span class='right currency'>" . ($totalKasMasuk - $totalKasKeluar) . "</span></th></tr>";
+          echo "<tr><th colspan='4'></th><th><span class='left'>Kas</span></th><th colspan='2' class='center'><span class='right currency'>" . ($totalKasMasuk + $totalKasKeluar) . "</span></th></tr>";
         ?>
       </tfoot>
     </table>
