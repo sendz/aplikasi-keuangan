@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col s6">
+  <div class="col s6 noprint">
     <div class="input-field col s5">
       <select class="" name="pemasukan-pilih-kelas" id="pemasukan-pilih-kelas">
         <option value="option" disabled selected>Pilih Kelas</option>
@@ -23,7 +23,7 @@
   </div>
 
   <div class="col s12">
-    <table class="stripped highlight">
+    <table class="striped highlight">
       <thead>
         <tr>
           <th rowspan="2">
@@ -149,14 +149,7 @@
       </tbody>
     </table>
   </div>
-  <?php if ($_SESSION['role'] == 1) : ?>
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red modal-trigger" href="#pemasukan-tambah">
-      <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
-    </a>
-  </div>
-<?php endif; ?>
-  <div id="pemasukan-tambah" class="modal">
+  <div id="modal-tambah" class="modal noprint">
     <form class="" action="<?php echo base_url() . index_page(); ?>/pemasukan/tambah" method="post">
       <div class="modal-content">
         <h4>Tambah Pemasukan</h4>

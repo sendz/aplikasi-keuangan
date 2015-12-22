@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col s6">
+  <div class="col s6 noprint">
     <div class="input-field col s6">
       <select class="" name="siswa-pilih-kelas" id="siswa-pilih-kelas">
         <option value="option">Pilih Kelas</option>
@@ -13,7 +13,7 @@
   </div>
 
   <?php if ($_SESSION['role'] == 1) : ?>
-  <div class="col s5 offset-s1">
+  <div class="col s5 offset-s1 noprint">
     <form class="" action="<?php echo base_url() . index_page(); ?>/siswa/upload" method="post" enctype="multipart/form-data">
       <div class="file-field input-field col s10">
         <div class="btn">
@@ -31,7 +31,7 @@
   </div>
   <?php endif; ?>
   <div class="col s12" id="table-siswa">
-    <table class="stripped highlight responsive-table">
+    <table class="striped highlight">
       <thead>
         <tr>
           <th>
@@ -54,7 +54,7 @@
           </th>
 
           <?php if ($_SESSION['role'] == 1) : ?>
-          <th style="width:150px;">
+          <th style="width:150px;" class="noprint">
             Aksi
           </th>
         <?php endif; ?>
@@ -79,7 +79,7 @@
             echo "</td>";
 
             if ($_SESSION['role'] == 1) :
-            echo "<td>";
+            echo "<td class='noprint'>";
             if ($siswa->nis != null) {
               $nis = $siswa->nis;
             } else {
@@ -94,20 +94,13 @@
       </tbody>
     </table>
   </div>
-  <div class="col s12 center" style="margin: 20px 0px;">
+  <div class="col s12 center noprint" style="margin: 20px 0px;">
     <?php echo $links; ?>
   </div>
 
-  <?php if ($_SESSION['role'] == 1) : ?>
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red modal-trigger" href="#siswa-tambah-siswa">
-      <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
-    </a>
-  </div>
-  <?php endif; ?>
 
   <!-- Modal Tambah Siswa -->
-  <div id="siswa-tambah-siswa" class="modal">
+  <div id="modal-tambah" class="modal noprint">
     <form class="form" action="<?php echo base_url() . index_page(); ?>/siswa/tambah" method="post">
       <div class="modal-content">
         <h4>Tambah Siswa</h4>
@@ -150,7 +143,7 @@
   </div>
 
   <!-- Modal Edit Siswa -->
-  <div id="siswa-edit-siswa" class="modal">
+  <div id="siswa-edit-siswa" class="modal noprint">
     <form class="form" action="<?php echo base_url() . index_page(); ?>/siswa/update" method="post">
       <div class="modal-content">
         <h4>Edit Siswa</h4>

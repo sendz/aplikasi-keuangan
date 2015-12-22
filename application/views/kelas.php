@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s12">
-    <table class="stripped highlight responsive-table">
+    <table class="striped highlight responsive-table" id="table-kelas">
       <thead>
         <tr>
           <th>
@@ -13,7 +13,7 @@
             Jumlah Siswa
           </th>
           <?php if ($_SESSION['role'] == 1) : ?>
-          <th style="width:150px;">
+          <th style="width:150px;" class="noprint">
             Aksi
           </th>
           <?php endif;?>
@@ -35,7 +35,7 @@
             echo "</td>";
 
             if ($_SESSION['role'] == 1) :
-            echo "<td>";
+            echo "<td class='noprint'>";
             echo "<a class='btn waves-effect waves-light' onClick='modalEditKelas(".$data->id.",\"".$data->tingkat." ".$data->nama."\")'>Edit</a>";
             echo "</td>";
             endif;
@@ -45,15 +45,8 @@
       </tbody>
     </table>
   </div>
-  <?php if ($_SESSION['role'] == 1) : ?>
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red modal-trigger" href="#siswa-tambah-kelas">
-      <i class="large material-icons"><img style="margin:4px;" src="<?php echo base_url(); ?>public/img/ic_add_white_48px.svg" alt="menu" /></i>
-    </a>
-  </div>
-  <?php endif; ?>
   <!-- Modal Tambah -->
-  <div id="siswa-tambah-kelas" class="modal">
+  <div id="modal-tambah" class="modal noprint">
     <form class="form" action="<?php echo base_url() . index_page(); ?>/kelas/tambah" method="post">
       <div class="modal-content">
         <h4>Tambah Kelas</h4>
@@ -68,7 +61,7 @@
     </form>
   </div>
   <!-- Modal Edit -->
-  <div id="siswa-edit-kelas" class="modal">
+  <div id="siswa-edit-kelas" class="modal noprint">
     <form class="form" action="<?php echo base_url() . index_page(); ?>/kelas/update" method="post">
       <div class="modal-content">
         <h4>Edit Kelas</h4>

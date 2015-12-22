@@ -1,4 +1,4 @@
-<table class="stripped highlight responsive-table">
+<table class="striped highlight">
   <thead>
     <tr>
       <th>

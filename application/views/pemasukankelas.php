@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col s6">
+  <div class="col s6 noprint">
     <div class="input-field col s5">
       <select class="" name="pemasukan-pilih-kelas" id="pemasukan-pilih-kelas">
         <option value="option" disabled selected>Pilih Kelas</option>
@@ -132,6 +132,7 @@
     </table>
   </div>
 </div>
+
 <script>
 document.getElementById('pemasukan-pilih-kelas').onchange = function() {
   var id = this.value;

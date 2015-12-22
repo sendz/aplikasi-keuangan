@@ -18,14 +18,20 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css" media="screen" title="no title" charset="utf-8">
     <style>
       @media print {
-        nav, .fixed-action-btn, #tambah-pengeluaran, #pengeluaran-tambah {
-          display: none;
+        nav, .fixed-action-btn, #tambah-pengeluaran, #pengeluaran-tambah, select, input {
+          display: none !important;
+        }
+        table#table-kelas > tr > th {
+          min-width: 200px;
         }
         .print {
           display: block !important;
         }
-        table th, table td {
+        table, table th, table td {
           border: 1px solid black;
+        }
+        .noprint {
+          display: none !important;
         }
       }
     </style>

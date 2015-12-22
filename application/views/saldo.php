@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col s12">
+  <div class="col s12 noprint">
     <h5>Filter per tanggal</h5>
     <form class="form" action="<?php echo base_url() . index_page(); ?>/kas/saldo" method="post">
       <div class="col s3">

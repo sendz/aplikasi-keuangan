@@ -25,7 +25,7 @@ class Siswa extends CI_Controller
     $config['uri_segment'] = 3;
 
     // pagination styling
-    $config['full_tag_open'] = "<ul class='pagination'>";
+    $config['full_tag_open'] = "<ul class='pagination noprint'>";
     $config['full_tag_close'] = "</ul>";
     $config['first_link'] = "Awal";
     $config['last_link'] = "Akhir";
